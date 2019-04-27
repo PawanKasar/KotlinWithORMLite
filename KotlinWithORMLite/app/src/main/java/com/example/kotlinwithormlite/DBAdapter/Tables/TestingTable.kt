@@ -21,18 +21,18 @@ data class TestingTable(
 
 class TestTable{
     companion object{
-        lateinit var dao: Dao<TestTable, Int>
+        lateinit var dao: Dao<TestingTable, Int>
     }
 
     init {
-        dao = ORMDataBase.getDao(TestTable::class.java)
+        dao = ORMDataBase.getDao(TestingTable::class.java)
     }
 
-    fun add(testTable: TestTable) = dao.createOrUpdate(testTable)
+    fun add(testTable: TestingTable) = dao.createOrUpdate(testTable)
 
-    fun update(testTable: TestTable) = dao.update(testTable)
+    fun update(testTable: TestingTable) = dao.update(testTable)
 
-    fun delete(testTable: TestTable) = dao.delete(testTable)
+    fun delete(testTable: TestingTable) = dao.delete(testTable)
 
     fun queryForAll() = dao.queryForAll()
 
